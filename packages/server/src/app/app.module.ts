@@ -1,21 +1,15 @@
 import { Module } from '@nestjs/common';
-
-import { TrpcModule } from './trpc/trpc.module';
 import { UserService } from './user/user.service';
-import { appRouter } from '../router';
-
+import { UserRouter } from '@/app/user/user.router';
+import { TRPCModule } from 'nestjs-trpc';
 @Module({
   imports: [
-    // 导入tRPC模块
-    TrpcModule.forRoot({
-      // 路由前缀
-      prefix: '/trpc',
-
-      // tRPC路由定义
-      router: appRouter,
-    }),
+    TRPCModule.forRoot({
+      autoSchemaFile: './src/@generated',
+    })
   ],
-  providers: [UserService],
+  providers: [UserRouter, UserService],
   controllers: [],
+
 })
-export class AppModule {}
+export class AppModule { }

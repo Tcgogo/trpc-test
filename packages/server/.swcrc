@@ -13,10 +13,7 @@
     },
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"],
-      "@libs/*": ["./src/libs/*"],
-      "@app/*": ["./src/app/*"],
-      "@router/*": ["./src/router/*"]
+      "@/*": ["./src/*"]
     },
     "target": "esnext"
   },
@@ -24,5 +21,6 @@
     "type": "es6",
     "resolveFully": true
   },
-  "minify": false
+  "minify": false,
+  "exclude": ["node_modules", "dist", "src/@generated"]
 }

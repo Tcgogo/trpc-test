@@ -9,6 +9,7 @@
     "strict": true,
     "outDir": "dist",
     "sourceMap": true,
+    "rootDir": "./src",
     "inlineSources": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -16,10 +17,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@libs/*": ["./src/libs/*"],
-      "@app/*": ["./src/app/*"],
-      "@router/*": ["./src/router/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],
